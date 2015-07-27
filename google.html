@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Google</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Crimson+Text:400">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900">
+<style>
+body{
+	margin:0;
+	color:#444;
+	background:#eee;
+	font:300 18px/18px Roboto, sans-serif;
+}
+*,:after,:before{box-sizing:border-box}
+.pull-left{float:left}
+.pull-right{float:right}
+.clearfix:after,.clearfix:before{content:'';display:table}
+.clearfix:after{clear:both;display:block}
+
+.google-wrap{
+	width:300px;
+	margin:auto;
+	height:435px;
+	background:url(bg.png) #fff no-repeat top center / 100%;
+}
+.google{
+	width:100%;
+	height:100%;
+	padding:15px;
+	overflow:hidden;
+	background:#fff;
+	margin:15% auto 0;
+	position:relative;
+	border:1px solid #ddd;
+	transition:background .6s ease-in-out 0s;
+}
+.google .google-top{
+	transition:transform .2s ease-in-out 0s;
+}
+.google .lnk{
+	width:28px;
+	height:28px;
+	text-align:center;
+	display:inline-block;
+}
+.google .pull-right .lnk{
+	margin-left:5px;
+}
+.google .lnk svg{
+	height:100%;
+}
+.google .lnk img{
+	width:100%;
+    height:100%;
+    display:block;
+    border-radius:50%;
+}
+
+.google .google-text{
+	cursor:default;
+	text-align:center;
+	-webkit-user-select:none;
+	-moz-select:none;
+	-ms-select:none;
+	user-select:none;
+	transition:font .4s ease-in-out 0s, color .6s ease-in-out 0s;
+	font:400 65px/65px 'Crimson Text', 'Times New Roman', serif;
+}
+.google .google-text span{display:inline-block;position:relative}
+.google .google-text span:nth-child(1){color:#156aeb}
+.google .google-text span:nth-child(2),
+.google .google-text span:nth-child(6){color:#d8442f}
+.google .google-text span:nth-child(3){color:#ffb304}
+.google .google-text span:nth-child(4){color:#166ced}
+.google .google-text span:nth-child(5){color:#009b58}
+.google .google-text span:nth-child(6){left:-5px;transform:rotate(-25deg)}
+
+.google .google-input{
+	margin-top:30px;
+	overflow:hidden;
+	position:relative;
+	transition:margin .4s ease-in-out 0s;
+}
+.google .input{
+	z-index:10;
+	width:100%;
+	height:40px;
+	padding:10px;
+	display:block;
+	position:relative;
+	padding-right:40px;
+}
+.google .btn{
+	top:0;
+	right:0;
+	margin:0;
+	padding:0;
+	z-index:10;
+	width:40px;
+	height:40px;
+	border:none;
+	position:absolute;
+	background:transparent;
+}
+.google .btn svg{
+	width:25px;
+	height:100%;
+}
+.google .google-btm{
+	transition:transform .2s ease-in-out 0s;
+	transform:translateY(100px);
+}
+.google .google-btm .google-search{
+	margin-top:30px;
+}
+.google .google-btm .google-search-result{
+	padding:10px 0;
+	cursor:pointer;
+}
+.google .google-btm .google-search-result:not(:last-child){
+	border-bottom:1px solid #ccc;
+}
+.google .google-btm .google-search-result .title{
+	font-size:14px;
+	font-weight:400;
+	margin-bottom:10px;
+}
+.google .google-btm .google-search-result img{
+	margin-right:10px;
+}
+.google .google-btm .google-search-result p{
+	margin:0;
+	font-size:12px;
+	
+}
+
+.google.active{
+	background:transparent;
+}
+.google.active .google-top{
+	transform:translateY(-45px);
+}
+.google.active .google-btm{
+	transform:translateY(0);
+}
+.google.active .google-text{
+	font-size:48px;
+	text-shadow:0 1px 1px rgba(0,0,0,.6);
+}
+.google.active .google-text span{
+	color:#fff;
+}
+.google.active .google-input{
+	margin-top:5px;
+}
+</style>
+</head>
+<body>
+
+<div class="google-wrap">
+<div class="google">
+	<div class="google-top clearfix">
+		<a class="lnk pull-left" href="#"><svg height="15px" width="15px" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_1"/><g id="cog"><path d="M32,17.969v-4l-4.781-1.992c-0.133-0.375-0.273-0.738-0.445-1.094l1.93-4.805L25.875,3.25   l-4.762,1.961c-0.363-0.176-0.734-0.324-1.117-0.461L17.969,0h-4l-1.977,4.734c-0.398,0.141-0.781,0.289-1.16,0.469l-4.754-1.91   L3.25,6.121l1.938,4.711C5,11.219,4.848,11.613,4.703,12.02L0,14.031v4l4.707,1.961c0.145,0.406,0.301,0.801,0.488,1.188   l-1.902,4.742l2.828,2.828l4.723-1.945c0.379,0.18,0.766,0.324,1.164,0.461L14.031,32h4l1.98-4.758   c0.379-0.141,0.754-0.289,1.113-0.461l4.797,1.922l2.828-2.828l-1.969-4.773c0.168-0.359,0.305-0.723,0.438-1.094L32,17.969z    M15.969,22c-3.312,0-6-2.688-6-6s2.688-6,6-6s6,2.688,6,6S19.281,22,15.969,22z" style="fill:#7f7f7f;"/></g></svg></a>
+		<div class="pull-right">
+			<a class="lnk pull-left" href="#"><svg height="15px" width="15px" style="enable-background:new 0 0 24 24" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path clip-rule="evenodd" d="M18,24c-0.3,0-0.548-0.246-0.548-0.546V18c0-0.3,0.248-0.546,0.548-0.546h5.452  C23.754,17.454,24,17.7,24,18v5.454c0,0.3-0.246,0.546-0.548,0.546H18z M9.271,24c-0.298,0-0.543-0.246-0.543-0.546V18  c0-0.3,0.245-0.546,0.543-0.546h5.457c0.3,0,0.543,0.246,0.543,0.546v5.454c0,0.3-0.243,0.546-0.543,0.546H9.271z M0.548,24  C0.246,24,0,23.754,0,23.454V18c0-0.3,0.246-0.546,0.548-0.546H6c0.302,0,0.548,0.246,0.548,0.546v5.454C6.548,23.754,6.302,24,6,24  H0.548z M18,15.271c-0.3,0-0.548-0.244-0.548-0.542V9.272c0-0.299,0.248-0.545,0.548-0.545h5.452C23.754,8.727,24,8.973,24,9.272  v5.457c0,0.298-0.246,0.542-0.548,0.542H18z M9.271,15.271c-0.298,0-0.543-0.244-0.543-0.542V9.272c0-0.299,0.245-0.545,0.543-0.545  h5.457c0.3,0,0.543,0.246,0.543,0.545v5.457c0,0.298-0.243,0.542-0.543,0.542H9.271z M0.548,15.271C0.246,15.271,0,15.026,0,14.729  V9.272c0-0.299,0.246-0.545,0.548-0.545H6c0.302,0,0.548,0.246,0.548,0.545v5.457c0,0.298-0.246,0.542-0.548,0.542H0.548z M18,6.545  c-0.3,0-0.548-0.245-0.548-0.545V0.545C17.452,0.245,17.7,0,18,0h5.452C23.754,0,24,0.245,24,0.545V6c0,0.3-0.246,0.545-0.548,0.545  H18z M9.271,6.545C8.974,6.545,8.729,6.3,8.729,6V0.545C8.729,0.245,8.974,0,9.271,0h5.457c0.3,0,0.543,0.245,0.543,0.545V6  c0,0.3-0.243,0.545-0.543,0.545H9.271z M0.548,6.545C0.246,6.545,0,6.3,0,6V0.545C0,0.245,0.246,0,0.548,0H6  c0.302,0,0.548,0.245,0.548,0.545V6c0,0.3-0.246,0.545-0.548,0.545H0.548z" fill-rule="evenodd"  style="fill:#7f7f7f;"/></svg></a>
+			<a class="lnk pull-left" href="#"><img src="http://s.gravatar.com/avatar/24a65a47147cddf5b270bc9f609ffa2a?s=48" alt="MHN"></a>
+		</div>
+	</div>
+	<div class="google-btm">
+		<div class="google-text"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></div>
+		<div class="google-input">
+			<input class="input" type="text">
+			<button class="btn">
+				<svg height="48px" width="48px" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g style="fill:#7f7f7f;"><path d="M112.1,238.1l-0.1,13.6c0.1,65.6,46,120.6,108.1,136.2c1.3,0.1,2.6,0.5,3.8,0.9c5.9,2,10.1,6.9,12.1,12.8v58.7   c0,10.9,8.9,19.7,20,19.7h0.1c11.1,0,19.9-8.8,19.9-19.7v-58.8c2-5.9,6.1-10.7,12-12.7c1.2-0.4,2.5-0.8,3.9-0.9   C354,372.3,400,317.3,400,251.7v-13.6c0-10.4-8.9-18.9-19.5-18.9c-10.6,0-19.5,8.4-19.5,18.9v13.6c0,28.5-11.5,54.1-30.6,72.8   c-19.2,18.6-45.3,30.2-74.5,30.2c-29.2,0-55.1-11.5-74.2-30.2c-19.1-18.7-30.7-44.4-30.7-72.8v-13.6c0-10.4-8.8-18.9-19.5-18.9   C120.9,219.2,112.1,227.7,112.1,238.1z"/><path d="M179,107.7v143.8c0,41.8,34.7,75.7,77.5,75.7c42.8,0,77.5-33.9,77.5-75.7V107.7c0-41.8-34.7-75.7-77.5-75.7   C213.7,32,179,65.9,179,107.7z"/ style="fill:#7f7f7f;"></g></svg>
+			</button>
+		</div>
+		<div class="google-search">
+			<div class="google-search-result" onclick="window.open('http://codecanyon.net/item/pt-pricing-tables-bootstrap-320/9695853?_ga=1.66742638.1769048998.1437972974&ref=khadkamhn', '_blank')">
+				<div class="title">PT – Pricing Tables Bootstrap 3.2.0</div>
+				<img class="pull-left" width="50%" src="http://0.s3.envato.com/files/113944605/pt_mockup.jpg">
+				<p>That is a pricing table which is build from Bootstrap and Font Awesome It is a responsive table and has 10 different colors scheme style.</p>
+			</div>
+			<div class="google-search-result"onclick="window.open('http://moarthemes.com/', '_blank')">
+				<div class="title">Moarthemes</div>
+				<img class="pull-left" width="50%" src="http://moarthemes.com/wp-content/uploads/2014/12/logo.png">
+				<p>Get more collections of premium and free themes,templates, plugins,reviews, tips and tutorials</p>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://code.jquery.com/jquery-1.11.3.min.js">\x3C/script>')</script>
+<script>
+$(function(){
+	$('.google').click(function(){
+		$(this).toggleClass('active');
+	});
+});
+</script>
+</body>
+</html>
